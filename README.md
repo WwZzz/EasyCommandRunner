@@ -35,9 +35,10 @@ Now, we show the full function by the example below
 <p>
 We only implement very basic functions by strings analysis, which supports to specify the value of the parameters as:
 </p>
-* if the value starts with '[' or '{', it's considered as a list of values which is spilted by ',' . (e.g. [1,2,3], {SGD, ADAM})
+
+* if the value starts with '\[' or '{', it's considered as a list of values which is spilted by ',' . (e.g. \[1,2,3], {SGD, ADAM})
 * if the value starts with '(', it's considered as a tuple `(left, right, interval)` like the `range(...)` in python. (e.g. (1,5,1) = {1,2,3,4,5})
-* if the value starts with digits or '-', it can be a single digit value or a list of values spilted by ',' (e.g. 1,2,3 = [1,2,3])
+* if the value starts with digits or '-', it can be a single digit value or a list of values spilted by ',' (e.g. 1,2,3 = \[1,2,3])
 * the value is considered as single value for the rest cases. (e.g. mnist)
 
 <p>
