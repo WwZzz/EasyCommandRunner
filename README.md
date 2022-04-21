@@ -47,11 +47,24 @@ Finally, we also allow the tool to save current settings as `config.json`, and t
 
 * `file>save`: save the current config into a file
 * `file>load`: load the config from file
-  
+
+The architecture of the saved configuration is
+```python
+"""
+{
+    '__command_head': ''
+    '__command_end': ''
+    'parameter_name': [type:str, value: str, used_iteratively: int]
+    ...
+}
+"""
+```
+
 ### ECG without GUI
 ECG without GUI can read `config.json` and convert it into the text of commands. The usage of this program is
 ```sh
 python ECG.py config_file command_text_file
 ```
+The architecture of the config file is the same as the saving manner of ECG_GUI.
 
 ## GPUScheduler
