@@ -1,13 +1,28 @@
-# Easy_Command_Generator
-A small tool with GUI for generating commands (e.g. hyper-parameter setting for deeplearning).
+# Easy_Command_Runner
+A small tool with GUI for generating commands (e.g. hyper-parameter setting for deeplearning) and adaptively running commands with GPU when the GPU memory is free enough.
 
 # Usage
-The initial state of the tool.
+There are mainly two parts of this tool: 1) Command Generator, 2) GPUScheduler.
+
+## Generator
+### ECG with GUI
+Run `ECG_GUI.py` or click the 'main.exe' and the tool will be like this
 <p>
   <img src="https://github.com/WwZzz/myfigs/blob/master/ECG_1.png" width="500" />
 </p>
 
-For values in 'Value', the tool combinates the lists of different parameters into a grid of parameters. The result is as below.
+There are three buttons on the screen, whose function are as below:
+
+* AddLine: adds the new parameter for the commands to be generated as a new line
+* Generate: generate the commands according to the current input
+* Clear: clear out all the added lines and the generated text of commands on the screen
+
+The content of the entries `Command Head` and `Command End` will appear at the head or the tail of all the generated commands. For example, if `Command Head`=`python`, then every command will start with 'python'. The usage of `Command End` is the same.
+
+After pressing the button `AddLine`, there will be a few components well organized within a row below the buttons like this:
+
+
+For valu with a row es in 'Value', the tool combinates the lists of different parameters into a grid of parameters. The result is as below.
 <p>
   <img src="https://github.com/WwZzz/myfigs/blob/master/ECG_2.png" width="500" /> 
 </p>
