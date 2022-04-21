@@ -68,3 +68,9 @@ python ECG.py config_file command_text_file
 The architecture of the config file is the same as the saving manner of ECG_GUI.
 
 ## GPUScheduler
+
+GPUScheduler is for automatically running commands whenever GPU is free enough. There are five parameters to be specified:
+* `Parameter`: the name of the parameter
+* `Value`: the data type (e.g. int, flt, str) and the value (list, range, or single value)
+* `Del`: delete the current row
+* `Used Iteratively`: if this term is selected, the current parameter will be inserted into all the generated commands with only a value in a iterative manner. For example, if the parameter is `--gpu` and the value is '0,1,2', then each command will contains `--gpu {}` where {} is one of {0,1,2}.
