@@ -44,9 +44,14 @@ We only implement very basic functions by strings analysis, which supports to sp
 <p>
 Finally, we also allow the tool to save current settings as `config.json`, and the saved configuration can be used again for the next time.
 </p>
+
 * `file>save`: save the current config into a file
 * `file>load`: load the config from file
   
- 
-
 ### ECG without GUI
+ECG without GUI can read `config.json` and convert it into the text of commands. The usage of this program is
+```sh
+python ECG.py config_file command_text_file
+```
+
+## GPUScheduler
