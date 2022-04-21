@@ -69,7 +69,7 @@ The architecture of the config file is the same as the saving manner of ECG_GUI.
 
 ## GPUScheduler
 
-GPUScheduler is for automatically running commands whenever GPU is free enough. Before using this tool, every should confirm that the input of command is correct and can be carried out succefully without this tool, including correctly exit with code 0. There are six parameters to be specified (one required and five optional):
+GPUScheduler is for automatically running commands whenever GPU is free enough. Before using this tool, everyone should confirm the correctness of the command for which can be carried out succefully without this tool, including correctly exit with code 0. There are six parameters to be specified (one required and five optional):
 * `cmd_file`: the name of the text file which contains all the commands to be carried, which is required
 * `m`: the least memory needed for each command (MB)
 * `p`: the period of confirming the GPU is being adequately free (seconds)
