@@ -69,8 +69,20 @@ The architecture of the config file is the same as the saving manner of ECG_GUI.
 
 ## GPUScheduler
 
-GPUScheduler is for automatically running commands whenever GPU is free enough. There are five parameters to be specified:
-* `Parameter`: the name of the parameter
-* `Value`: the data type (e.g. int, flt, str) and the value (list, range, or single value)
-* `Del`: delete the current row
-* `Used Iteratively`: if this term is selected, the current parameter will be inserted into all the generated commands with only a value in a iterative manner. For example, if the parameter is `--gpu` and the value is '0,1,2', then each command will contains `--gpu {}` where {} is one of {0,1,2}.
+GPUScheduler is for automatically running commands whenever GPU is free enough. Before using this tool, every should confirm that the input of command is correct and can be carried out succefully without this tool, including correctly exit with code 0. There are six parameters to be specified (one required and five optional):
+* `cmd_file`: the name of the text file which contains all the commands to be carried, which is required
+* `m`: the least memory needed for each command (MB)
+* `p`: the period of confirming the GPU is being adequately free (seconds)
+* `i`: the interval between every two checking frames and should be smaller that `p` (seconds)
+* `d`: the working dictionary of the commands
+* `b`: the bin path of the commands, which is useful when the python interpreter is created by anaconda. 
+
+The usage of this file is
+```sh
+python GPUScheduler.py command_file --m 1000 --p 30 --i 10 --d project_path --b anaconda_interpreter_path 
+```
+And a table like this will appear on the screen before all the commands are finished:
+<p>
+  <img src="https://github.com/WwZzz/myfigs/blob/master/ECG_4.png" width="500" /> 
+</p>
+
